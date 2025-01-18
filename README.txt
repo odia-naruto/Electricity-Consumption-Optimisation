@@ -1,7 +1,6 @@
 # Energy Consumption Clustering and Prediction Project
 
-This was the course project of M Kartik (EC22B1013) and J Sai Sasank (EC22B1087) and 
-this project focuses on clustering apartments based on their monthly energy consumption patterns and building predictive models to forecast future energy usage. The goal is to assist power plants in anticipating energy demand and optimizing their production schedules.
+This was the course project of **M Kartik (EC22B1013)** and **J Sai Sasank (EC22B1087)**. This project focuses on clustering apartments based on their monthly energy consumption patterns and building predictive models to forecast future energy usage. The goal is to assist power plants in anticipating energy demand and optimizing their production schedules.
 
 ## Project Overview
 
@@ -78,36 +77,3 @@ The dataset consists of the following columns:
 - scikit-learn
 
 Install dependencies using:
-```bash
-pip install pandas numpy seaborn matplotlib scikit-learn
-```
-
-## How to Run
-
-1. **Prepare the Data**:
-   Ensure the dataset is available as `combined_data.csv` and contains the required columns.
-
-2. **Run the Code**:
-   Execute the Python script to:
-   - Perform clustering.
-   - Train models for each cluster.
-   - Visualize model performance.
-
-3. **Evaluate Results**:
-   Check the \( R^2 \) score and the visualized plots to assess model performance.
-
-## Challenges and Improvements
-
-### Current Challenges
-- Negative \( R^2 \) scores may indicate underfitting or suboptimal feature engineering.
-- Clustering may not effectively group apartments with similar patterns if the correlation matrix is insufficient.
-
-### Future Improvements
-1. Incorporate additional features (e.g., weather data, time of day).
-2. Test alternative models, such as Gradient Boosting or LSTM for time series predictions.
-3. Perform grid search for hyperparameter tuning.
-4. Experiment with different aggregation levels (e.g., weekly data).
-
-## Acknowledgments
-This project uses energy consumption data to explore clustering and predictive modeling techniques, with the goal of improving demand forecasting for power plants.
-
