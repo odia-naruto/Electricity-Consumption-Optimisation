@@ -1,6 +1,6 @@
 # Energy Consumption Clustering and Prediction Project
 
-This was the course project of **M Kartik (EC22B1013)** and **J Sai Sasank (EC22B1087)**. This project focuses on clustering apartments based on their monthly energy consumption patterns and building predictive models to forecast future energy usage. The goal is to assist power plants in anticipating energy demand and optimizing their production schedules.
+This project focuses on clustering apartments based on their monthly energy consumption patterns and building predictive models to forecast future energy usage. The goal is to assist power plants in anticipating energy demand and optimizing their production schedules.
 
 ## Project Overview
 
@@ -34,16 +34,16 @@ The dataset consists of the following columns:
   Aggregation and feature engineering to create a dataset suitable for clustering and regression modeling.
 
 - **Clustering**:
-  K-Means clustering is performed on the correlation matrix derived from monthly energy consumption.
+  K-Means clustering is performed on the correlation matrix derived from monthly energy consumption. The choice of K-Means is due to its efficiency in handling numerical data and its ability to group apartments based on similar consumption patterns.
 
 - **Model Training**:
   For each cluster:
   - Data is resampled to monthly levels.
   - Lagged features are created (e.g., `lag_1`, `lag_3`).
-  - Kernel Ridge Regression models are trained to predict energy consumption.
+  - Kernel Ridge Regression models are trained to predict energy consumption. This model was chosen for its ability to capture non-linear relationships.
 
 - **Evaluation**:
-  Model performance is evaluated using the \( R^2 \) score.
+  Model performance is evaluated using the \( R^2 \) score. Negative \( R^2 \) scores may indicate underfitting or issues with feature selection, necessitating further model tuning or feature engineering.
 
 ## Key Functions
 
@@ -77,3 +77,37 @@ The dataset consists of the following columns:
 - scikit-learn
 
 Install dependencies using:
+```bash
+pip install pandas numpy seaborn matplotlib scikit-learn
+```
+
+## How to Run
+
+1. **Prepare the Data**:
+   Ensure the dataset is available as `combined_data.csv` and contains the required columns.
+
+2. **Run the Code**:
+   Execute the Python script to:
+   - Perform clustering.
+   - Train models for each cluster.
+   - Visualize model performance.
+
+3. **Evaluate Results**:
+   Review the \( R^2 \) scores and visualized plots to assess model performance. Negative \( R^2 \) scores suggest the model is underperforming and may require additional tuning or feature adjustments.
+
+## Challenges and Improvements
+
+### Current Challenges
+- Negative \( R^2 \) scores may indicate underfitting, insufficient feature engineering, or that Kernel Ridge Regression isn't the best model for the data.
+- Clustering might not effectively group apartments if the correlation matrix doesn't capture meaningful patterns.
+
+### Future Improvements
+1. Incorporate additional features (e.g., weather data, time of day) to enhance model accuracy.
+2. Test alternative models, such as Gradient Boosting or LSTM, for more robust time series predictions.
+3. Perform hyperparameter tuning using grid search or cross-validation.
+4. Experiment with different aggregation levels (e.g., weekly data) to capture finer consumption patterns.
+5. Use different clustering techniques like DBSCAN or hierarchical clustering to see if they yield better groupings.
+
+## Acknowledgments
+This project uses energy consumption data to explore clustering and predictive modeling techniques, with the goal of improving demand forecasting for power plants.
+
